@@ -1,0 +1,9 @@
+com.example.mediasoft
+com.example.mediasoft.config
+com.example.mediasoft.controller
+com.example.mediasoft.dto
+com.example.mediasoft.exception
+com.example.mediasoft.model
+com.example.mediasoft.repository
+com.example.mediasoft.service
+com.example.mediasoft.util

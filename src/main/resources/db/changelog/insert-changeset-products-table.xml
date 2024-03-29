@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="insert-into-products" author="Tamada">
+        <insert tableName="products">
+            <column name="article" value="15cb0ec7-4e3a-45fc-afeb-a9c5e119ef34"/>
+            <column name="name" value="Fluffy bear"/>
+            <column name="description" value="What a beautiful toy"/>
+            <column name="category" value="Toys"/>
+            <column name="price" value="1000"/>
+            <column name="count" value="2"/>
+            <column name="editdate" value=""/>
+            <column name="createdate" value="now()"/>
+        </insert>
+        <insert tableName="products">
+            <column name="article" value="16cb0ec7-4e3a-45fc-afeb-a9c5e119ef34"/>
+            <column name="name" value="Fluffy bears"/>
+            <column name="description" value="What a beautiful toys"/>
+            <column name="category" value="Toys"/>
+            <column name="price" value="100"/>
+            <column name="count" value="2000"/>
+            <column name="editdate" value=""/>
+            <column name="createdate" value="now()"/>
+        </insert>
+        <insert tableName="products">
+            <column name="article" value="14cb0ec7-4e3a-45fc-afeb-a9c5e119ef34"/>
+            <column name="name" value="Mousepad"/>
+            <column name="description" value="Esport is waiting"/>
+            <column name="category" value="Esport"/>
+            <column name="price" value="1000"/>
+            <column name="count" value="20"/>
+            <column name="editdate" value=""/>
+            <column name="createdate" value="now()"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

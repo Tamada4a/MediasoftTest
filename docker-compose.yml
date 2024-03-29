@@ -1,0 +1,33 @@
+version: "3.7"
+services:
+  db:
+    image: "postgres:16.2-alpine"
+    container_name: "db"
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespass
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+  
+  backend:
+    image: "mediasoft:latest"
+    container_name: "backend"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespass  
+      SERVER_PORT: 8080
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgrespass
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    ports:
+      - 8080:8080
